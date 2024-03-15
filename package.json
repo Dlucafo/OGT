@@ -1,0 +1,15 @@
+{
+  "name": "progetto_prenotazioni_ospedale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Dlucafo/OGT"
+  },
+  "author": "Domenico Daniele Lucafò",
+  "license": "ISC"
+}
