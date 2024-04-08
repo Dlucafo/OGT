@@ -1,0 +1,31 @@
+{
+  "name": "prenot-prj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Dlucafo/OGT.git"
+  },
+  "author": "Domenico Daniele Lucafò",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dlucafo/OGT/issues"
+  },
+  "homepage": "https://github.com/Dlucafo/OGT#readme",
+  "dependencies": {
+    "@marko/webpack": "^9.3.7",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "marko-loader": "^1.5.0",
+    "markojs": "^4.18.21",
+    "webpack": "^5.91.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}
