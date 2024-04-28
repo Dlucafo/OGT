@@ -9,11 +9,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "static/views"));
 
 app.get('/', function(req, res) {
-  res.redirect('/login');
-})
-
-app.get('/login', function(req, res){
-  res.render('login');
+  res.render('index');
 })
 
 app.listen(port);

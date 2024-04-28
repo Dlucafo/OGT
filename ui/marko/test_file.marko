@@ -1,0 +1,17 @@
+class {
+  onCreate() {
+    this.state = {
+      arr: [
+        "uno",
+        "due",
+        "tre"
+      ]
+    }
+  }
+}
+
+<div>
+  <for|numero| of=state.arr>
+    <p>${numero}</p>
+  </for>
+</div>

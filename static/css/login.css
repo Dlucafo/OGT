@@ -1,0 +1,53 @@
+
+.wrapper {
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5%;
+}
+.wrapper_password_to_change {
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5%;
+}
+.logo {
+  margin-bottom: 20px;
+  margin-left: -51px;
+}
+.logo-sge {
+  margin-bottom: 20px;
+}
+.logo-tegis {
+  margin-left: -30px;
+  margin-bottom: 40px;
+}
+
+.logo-tegis-update{
+  width: auto;
+  max-width: 355px;
+  max-height: 125px;
+  margin-left: -13px;
+  margin-bottom: 40px;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo_middle {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+.btn {
+  width: 100%;
+}
+
+.button_wrapper_password_to_change{
+  margin-top: 20px;
+}
+
+#app-version {
+  font-size: 0.9em;
+  text-align: center;
+}
