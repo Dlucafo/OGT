@@ -1,0 +1,44 @@
+class {
+  onCreate() {
+    this.state = {
+      menu_item: [],
+      menu_link: []
+    }
+  }
+
+  onInput(input) {
+    this.state.menu_item = input.params;
+    console.log(input)
+  }
+
+  onMount() {
+    let listGroup = document.querySelector(".list-group");
+    let aList = listGroup.querySelectorAll('a')
+    this.state.menu_link = aList;
+  }
+
+  menuButtonClick(element) {
+    let target = element.target.id;
+
+    this.state.menu_link.forEach(el => {
+      if(el.id===target) {
+        el.classList.add("active");
+        el.ariaCurrent = "true";
+      } else {
+        el.classList.remove("active");
+        el.removeAttribute("aria-current");
+      }
+    })
+    this.emit('changedHomePage', target);
+  }
+}
+
+
+<div id="left-menu">
+  <div class="list-group">
+  <for|el, index, array| of=state.menu_item>
+    <a href="#" id=el.id+"-button" class="list-group-item list-group-item-action" onClick('menuButtonClick')>${el.name}</a>
+  </for>
+    <!--<a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a> -->
+  </div>
+</div>

@@ -1,0 +1,30 @@
+class {
+  onCreate() {
+    this.state = {
+      menu_item: [
+        {id: 'password', name: 'Cambio Password'},
+        {id: 'anagrafica', name: 'Dati Anagrafici'}
+      ],
+      menu_link: []
+    }
+  }
+
+  onMount() {
+    let listGroup = document.querySelector(".list-group");
+    let aList = listGroup.querySelectorAll('a')
+    this.state.menu_link = aList;
+  }
+
+  changedHomePage(target) {
+    let output = document.getElementById('home-content');
+    Store.NewState(updateHomeContent(target, output));
+  }
+}
+
+<div class="home-container">
+  <left-menu params=state.menu_item on-changedHomePage('changedHomePage')/>  
+  <div id="home-content">
+    <p>Benvenuti sul sito di gestione prenotazioni del servizio sanitario nazionale.</p>
+    <p>Da questa pagina potete raggiungere le pagine per la gestione del vostro account.</p>
+  </div>
+</div>
