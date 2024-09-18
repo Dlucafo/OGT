@@ -10,7 +10,7 @@ $(function () {
           { type: 'break' },
           { type: 'radio',  id: 'pazienti',  group: '1', text: 'Pazienti', img: 'icon-page', hidden: true },
           { type: 'spacer' },
-          { type: 'button',  id: 'item5',  text: 'LogOut', class: 'log-out-icon', img: 'icon-logout' }
+          { type: 'button',  id: 'logOut',  text: 'Log Out', class: 'log-out-icon', img: 'icon-logout' }
       ],
 
       onClick: function(event) {
@@ -18,6 +18,10 @@ $(function () {
           case 'home':
             Store.NewState(showHome());
             break;
+          case 'logOut':
+            if (confirm('Sei sicuro di voler uscire?')) {
+              Store.NewState(logout());
+            }
           default:
             console.log('no main menu action find');
             break;

@@ -81,10 +81,17 @@ app.get('/views', function(req, res, next) {
 
 app.use('/', router);
 
-router.use('/', function (req, res, next) {
+router.use('/v1.0/', function (req, res, next) {
   console.log(req.user.id)
   console.log('Time: ', new Date);
   next();
+});
+
+app.get('/logout', function(req, res) {
+  req.logout((err) => {
+    if(err) return next(err);
+    res.redirect('/');
+  });
 });
 
 app.listen(port);
