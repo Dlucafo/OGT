@@ -7,7 +7,7 @@ var Action = {
 }
 
 // const nomeazione = () => ({type: Action.NOMEAZIONE})
-const start = (user) => ({ type: Action.START, user: user })
+const start = (user, idruolo) => ({ type: Action.START, user: user, idruolo: idruolo })
 
 const showHome = () => ({ type: Action.SHOW_HOME })
 const updateHomeContent = (target, output) => ({ type: Action.UPDATE_HOME_CONTENT, target: target, output: output })

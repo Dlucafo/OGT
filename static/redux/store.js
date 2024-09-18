@@ -21,5 +21,3 @@ document.addEventListener(
   },
   false
 );
-
-console.log("Store Charged")

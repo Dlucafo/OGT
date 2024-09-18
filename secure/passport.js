@@ -37,7 +37,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
   db.one(
-    'SELECT p.id, p.codice_fiscale ' +
+    'SELECT p.id, p.codice_fiscale, p.idruolo ' +
     'FROM persone p ' +
     'WHERE p.id = $1',
     [id]

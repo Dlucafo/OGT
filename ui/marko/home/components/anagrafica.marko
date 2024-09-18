@@ -26,7 +26,7 @@ class {
     }
 
     let options = {
-      url: '/v1.0/users/'+ Store.state.user +'/isPasswordCorrect',
+      url: '/users/'+ Store.state.user +'/isPasswordCorrect',
       method: 'GET',
       params: {
         old_pass: old_pass
@@ -41,7 +41,7 @@ class {
     }
 
     options = {
-      url: '/v1.0/users/'+ Store.state.user +'/editPassword',
+      url: '/users/'+ Store.state.user +'/editPassword',
       method: 'POST',
       params: {
         new_pass: new_pass

@@ -2,6 +2,18 @@ let {db} = require('../db/dbConnection.js');
 let bcrypt = require('bcrypt');
 
 let users = {
+  initUser: function(req, res) {
+    let iduser = req.params.iduser;
+    db.one('SELECT idruolo FROM persone WHERE id=$1', [iduser])
+    .then(function(data){
+      res.status(200).json(data.idruolo);
+    })
+    .catch(function(error) {
+      console.log('initUser error: ' + error);
+      res.sendStatus(500);
+    });
+  },
+
   isPasswordCorrect: function(req, res) {
     let iduser = req.params.iduser;
     let old_pass = req.query.old_pass;

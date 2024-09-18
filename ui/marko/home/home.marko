@@ -3,9 +3,11 @@ class {
     this.state = {
       menu_item: [
         {id: 'password', name: 'Cambio Password'},
-        {id: 'anagrafica', name: 'Dati Anagrafici'}
       ],
       menu_link: []
+    }
+    if(Store.state.idruolo==2) {
+      this.state.menu_item.push({id: 'anagrafica', name: 'Dati Anagrafici'});
     }
   }
 

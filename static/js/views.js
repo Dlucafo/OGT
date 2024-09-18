@@ -1,2 +1,3 @@
 let user = document.getElementById('iduser').value;
-Store.NewState(start(user));
+let idruolo = document.getElementById('idruolo').value;
+Store.NewState(start(user, idruolo));

@@ -1,12 +1,15 @@
 const express = require('express');
-const router = express.Router();
-
 const users = require('./users.js');
 
-router.route('/users/:iduser/isPasswordCorrect')
+const router = express.Router();
+
+router.route('/v1.0/users/:iduser')
+ .get(users.initUser)
+
+router.route('/v1.0/users/:iduser/isPasswordCorrect')
  .get(users.isPasswordCorrect)
 
-router.route('/users/:iduser/editPassword')
+router.route('/v1.0/users/:iduser/editPassword')
   .post(users.editPassword)
 
 module.exports = router;

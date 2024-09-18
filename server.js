@@ -48,7 +48,6 @@ app.post('/login', csrfProtection, function(req, res, next) {
     if (!user) { console.log(user); return res.redirect('/'); }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
-      userGlobal = user;
       return res.redirect('/views');
     });
   })(req, res, next);
@@ -57,6 +56,7 @@ app.post('/login', csrfProtection, function(req, res, next) {
 app.use('/v1.0', function (req, res, next) {
   if(req.user) {
     if(req.headers.authorization===req.user.id) {
+      console.log('authorization: true');
       next();
     } else {
       console.log('authorization: false');
@@ -71,7 +71,7 @@ app.use('/v1.0', function (req, res, next) {
 
 app.get('/views', function(req, res, next) {
   if (req.isAuthenticated()) {
-    res.render('views', {user:req.user.id, codice_fiscale: req.user.codice_fiscale});
+    res.render('views', {user:req.user.id, codice_fiscale: req.user.codice_fiscale, idruolo: req.user.idruolo});
     next();
   } else {
     console.log('Utente non autenticato');

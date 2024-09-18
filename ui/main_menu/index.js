@@ -2,20 +2,15 @@ $(function () {
   $('#toolbar').w2toolbar({
       name : 'myToolbar',
       items: [
-          { type: 'radio',  id: 'home', group: '1', caption: 'Home', img: 'icon-add', checked: true },
+          { type: 'radio',  id: 'home', group: '1', text: 'Home', img: 'icon-add', checked: true },
           { type: 'break' },
-          { type: 'menu',   id: 'personeMenu', caption: 'Drop Down', img: 'icon-folder', 
-              items: [
-                  { text: 'Item 1', img: 'icon-page' }, 
-                  { text: 'Item 2', img: 'icon-page' }, 
-                  { text: 'Item 3', img: 'icon-page' }
-              ]
-          },
+          { type: 'radio',   id: 'prenotazioni', group: '1', text: 'Prenotazioni', img: 'icon-folder'},
           { type: 'break' },
-          { type: 'radio',  id: 'persone',  group: '1', caption: 'Persone', img: 'icon-page' },
-          { type: 'radio',  id: 'strutture',  group: '1', caption: 'Strutture', img: 'icon-page' },
+          { type: 'radio',  id: 'strutture',  group: '1', text: 'Strutture', img: 'icon-page' },
+          { type: 'break' },
+          { type: 'radio',  id: 'pazienti',  group: '1', text: 'Pazienti', img: 'icon-page', hidden: true },
           { type: 'spacer' },
-          { type: 'button',  id: 'item5',  caption: 'LogOut', class: 'log-out-icon', img: 'icon-logout' }
+          { type: 'button',  id: 'item5',  text: 'LogOut', class: 'log-out-icon', img: 'icon-logout' }
       ],
 
       onClick: function(event) {
@@ -29,4 +24,14 @@ $(function () {
         }
       }
   });
+
+  switch(Store.state.action) {
+    case Action.START:
+      if(Store.state.idruolo==1) {
+        w2ui.myToolbar.show('pazienti');
+      }
+      break;
+  }
+  //console.log(w2ui.myToolbar.get('pazienti'))
+  
 });

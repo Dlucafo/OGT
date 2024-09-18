@@ -1,9 +1,10 @@
 import home from "./marko/home/home.marko"
 let output = document.getElementById("main-container");
+import utility from '../utility/utility.js';
 
 let INIT = {};
 
-INIT.Execute = function() {
+INIT.Execute = async function() {
   switch(Store.state.action) {
     case Action.START:
       INIT.render = home.renderSync().replaceChildrenOf(output);
