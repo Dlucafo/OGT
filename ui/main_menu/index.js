@@ -22,6 +22,10 @@ $(function () {
             if (confirm('Sei sicuro di voler uscire?')) {
               Store.NewState(logout());
             }
+            break;
+          case 'prenotazioni':
+            Store.NewState(showPrenotazioni())
+            break;
           default:
             console.log('no main menu action find');
             break;

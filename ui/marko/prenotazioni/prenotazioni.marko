@@ -2,12 +2,10 @@ class {
   onCreate() {
     this.state = {
       menu_item: [
-        {id: 'password', name: 'Cambio Password'},
+        {id: 'l_prenotazioni', name: 'Lista prenotazioni'},
+        {id: 's_prenotazioni', name: 'Storico prenotazioni'}
       ],
       menu_link: []
-    }
-    if(Store.state.idruolo==2) {
-      this.state.menu_item.push({id: 'anagrafica', name: 'Dati Anagrafici'});
     }
   }
 
@@ -18,15 +16,14 @@ class {
   }
 
   changedPage(target) {
-    let output = document.getElementById('home-content');
+    let output = document.getElementById('prenotazioni-content');
     Store.NewState(updateContent(target, output));
   }
 }
 
 <div class="home-container">
   <left-menu params=state.menu_item on-changedPage('changedPage')/>  
-  <div id="home-content">
-    <p>Benvenuti sul sito di gestione prenotazioni del servizio sanitario nazionale.</p>
-    <p>Da questa pagina potete raggiungere le pagine per la gestione del vostro account.</p>
+  <div id="prenotazioni-content">
+    <p>In questa sezione potete gestire le vostre prenotazioni.</p><p> La lista prenotazioni mostra le prenotazioni future, lo storico delle prenotazioni mostra quelle passate.</p>
   </div>
 </div>
